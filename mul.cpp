@@ -1,11 +1,11 @@
-///ADD.CPP///
+///MUL.CPP///
 // Lucas McIntosh //
 // 16/01/2013 //
-// Adds two numbers passed into the program from the cl and prints out the sum.
+// Multiplies two numbers passed into the program from the cl and prints out the sum.
 #include <iostream>
 #include <cstdlib>
 
-#define sum(x,y) ((x)+(y))
+#define sum(x,y) ((x)*(y))
 
 using namespace std
 int main(int argc, char* argv[]){
