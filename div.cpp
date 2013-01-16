@@ -7,7 +7,7 @@
 
 #define sum(x,y) ((x)/(y))
 
-using namespace std
+using namespace std;
 int main(int argc, char* argv[]){
 	int num1;
 	int num2;
