@@ -7,19 +7,34 @@
 
 #define sum(x,y) ((x)-(y))
 
-using namespace std;
+uusing namespace std;
 int main(int argc, char* argv[]){
-	int num1;
-	int num2;
-	int result;
+	double num1;
+	double num2;
+	double result;
+	bool errFlag;
+	
 	if(argc > 1){
-		num1 = atoi(argv[1]);
-		num2 = atoi(argv[2]);
-		result = sum(num1,num2);
-		cout << result<< endl;
+		
+		if(isdigit(argv[1][0]))
+			num1 = atoi(argv[1]);
+		else
+			errFlag = true;
+		
+		if(isdigit(argv[2][0]))
+			num2 = atoi(argv[2]);
+		else
+			errFlag = true;
+		
+		if(errFlag)
+			cout << "Error: Invalid argument(s) detected" << endl;
+		else{
+			result = sum(num1,num2);
+			cout << result<< endl;
+		}
 	}
 	else
-		cout << "Error: Arguments required";
+		cout << "Error: Arguments required" << endl;
 	return 0;
 }
 	
