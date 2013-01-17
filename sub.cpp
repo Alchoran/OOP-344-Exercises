@@ -4,15 +4,16 @@
 // Subtracts two numbers passed into the program from the cl and prints out the sum.
 #include <iostream>
 #include <cstdlib>
+#include <cctype>
 
 #define sum(x,y) ((x)-(y))
 
-uusing namespace std;
+using namespace std;
 int main(int argc, char* argv[]){
 	double num1;
 	double num2;
 	double result;
-	bool errFlag;
+	bool errFlag = false;
 	
 	if(argc > 1){
 		

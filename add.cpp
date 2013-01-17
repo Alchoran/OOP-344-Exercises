@@ -12,7 +12,7 @@ int main(int argc, char* argv[]){
 	double num1;
 	double num2;
 	double result;
-	bool errFlag;
+	bool errFlag = false;
 	
 	if(argc > 1){
 		
