@@ -11,11 +11,12 @@ using namespace std;
 int main(int argc, char* argv[], char* env[]){
 	char* pch = NULL;
 	int x=0;
+	strcpy(argv[1],toupper(argv[1]));
 	for(x=0;env[x]!=0 && pch==NULL ; x++){
-		pch=strstr(str, argv[1]);
+		pch=strstr(env[x], argv[1]);
 	}
 	if(pch)
-		cout <<  env[x] << endl;
+		cout <<  env[x-1] << endl;
 	else
 		cout << "not found" << endl;
 }

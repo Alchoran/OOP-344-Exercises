@@ -17,12 +17,12 @@ int main(int argc, char* argv[]){
 	if(argc > 1){
 		
 		if(isdigit(argv[1][0]))
-			num1 = atoi(argv[1]);
+			num1 = atof(argv[1]);
 		else
 			errFlag = true;
 		
 		if(isdigit(argv[2][0]))
-			num2 = atoi(argv[2]);
+			num2 = atof(argv[2]);
 		else
 			errFlag = true;
 		
