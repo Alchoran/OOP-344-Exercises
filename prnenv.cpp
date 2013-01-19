@@ -11,7 +11,7 @@ using namespace std;
 int main(int argc, char* argv[], char* env[]){
 	char* pch = NULL;
 	int x=0;
-	char str[strlen(argv[1]+1]);
+	char str[strlen(argv[1]+1)];
 	
 	for(x=0;argv[1][x]!=0;str[x]=toupper(argv[1][x]),x++);
 	str[x]=0;
