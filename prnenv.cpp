@@ -11,13 +11,13 @@ using namespace std;
 int main(int argc, char* argv[], char* env[]){
 	char* pch = NULL;
 	int x=0;
-	char str[strlen(argv[1]+1];
+	char str[strlen(argv[1]+1]);
 	
 	for(x=0;argv[1][x]!=0;str[x]=toupper(argv[1][x]),x++);
 	str[x]=0;
 	
 	for(x=0;env[x]!=0 && pch==NULL ; x++){
-		pch=strstr(env[x], argv[1]);
+		pch=strstr(str, argv[1]);
 	}
 	if(pch)
 		cout <<  env[x-1] << endl;
