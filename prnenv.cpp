@@ -34,7 +34,7 @@ int main(int argc, char* argv[], char* env[]){
 			result = new char[strlen(env[--x])];
 			strcpy(result, env[x]);
 			pch2 = strtok (result, "=");
-			
+			delete [] result;
 			// Prints out the environmental variable if the search string is a complete match.
 			if(strlen(pch2) == strlen(str))
 				cout <<  env[x] << endl;
@@ -47,14 +47,13 @@ int main(int argc, char* argv[], char* env[]){
 				for(x=0;env[x]!=0;x++){ 
 					pch=strstr(env[x], str);
 					if(pch){
-						pc2 = NULL;
+						pch2 = NULL;
 						pch2 = strtok (env[x], "=");
 						if(pch2)
 							cout << pch << endl;
 					} // End of if
 				} // End of for
 			} // End of else
-			delete [] result;
 		} // End of substring block
 	} // End of initial test
 	else
