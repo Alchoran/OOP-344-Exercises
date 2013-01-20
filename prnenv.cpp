@@ -27,7 +27,14 @@ int main(int argc, char* argv[], char* env[]){
 		pch2 = strtok (env[--x], "=");
 		if(strlen(pch2) == strlen(str))
 			cout <<  env[x] << endl;
-		else
-			cout << "not found" << endl;
+		else{
+			cout << "That environmental variable is not found." << endl;
+			cout << "Did you mean:" << endl;
+			for(x=0;env[x]!=0;x++){
+				pch=strstr(env[x], str);
+				if(pch)
+					cout << pch << endl;
+			}
+		}
 	}
 }
