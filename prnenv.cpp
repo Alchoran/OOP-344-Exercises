@@ -17,6 +17,7 @@ int main(int argc, char* argv[], char* env[]){
 	char* pch2 = NULL;
 	char* result = NULL;
 	int x=0;
+	int y=0;
 	char str[strlen(argv[1]+1)];
 	
 	if(argc>1){ // Initial test for required argument
@@ -32,9 +33,9 @@ int main(int argc, char* argv[], char* env[]){
 			that environmental variable is copied and tokenised.
 			*/
 			result = new char[strlen(env[--x])];
+			y=x;
 			strcpy(result, env[x]);
 			pch2 = strtok (result, "=");
-			delete [] result;
 			// Prints out the environmental variable if the search string is a complete match.
 			if(strlen(pch2) == strlen(str))
 				cout <<  env[x] << endl;
@@ -53,6 +54,9 @@ int main(int argc, char* argv[], char* env[]){
 							cout << pch << endl;
 					} // End of if
 				} // End of for
+				// Resets result variable back to original size to allow proper deletion.
+				strcpy(result, env[y]);
+				delete [] result;
 			} // End of else
 		} // End of substring block
 	} // End of initial test
